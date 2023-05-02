@@ -11,7 +11,7 @@ export class RegisterComponent {
   name = new FormControl('', [
     Validators.required,
     Validators.minLength(3)
-      ]);
+  ]);
   email = new FormControl('', [
     Validators.email
   ]);
@@ -32,4 +32,9 @@ export class RegisterComponent {
     confirm_password: this.confirm_password,
     phoneNumber: this.phoneNumber
   })
+
+  register() {
+    console.log('register called');
+
+  }
 }
