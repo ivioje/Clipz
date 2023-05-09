@@ -242,8 +242,7 @@
         </p>
 
       </div>
-
     </a>
   </div>
 </section>
-<app-auth-model></app-auth-model>
+<app-auth-model *ngIf='!(auth.isAuthenticatedWithDelay$ | async)'></app-auth-model>

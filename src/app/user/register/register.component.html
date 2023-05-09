@@ -1,4 +1,4 @@
-<app-alert **ngIf="showAlert" [color]="alertColor">
+<app-alert *ngIf="showAlert" [color]="alertColor">
     {{ alertMsg }}
 </app-alert>
 
@@ -35,7 +35,7 @@
         <label class="inline-block mb-2">Phone Number</label>
         <app-input [control]='phoneNumber' placeholder="Enter phone number" format='000-0000-0000'></app-input>
     </div>
-    <button [disabled]="registerForm.invalid" type="submit" class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
+    <button [disabled]="registerForm.invalid || inSubmission" type="submit" class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition
       hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-400">
         Submit
     </button>
