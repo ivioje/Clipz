@@ -33,7 +33,7 @@ export class LoginComponent {
       )
     } catch (error) {
       this.inSubmission = false
-      this.alertMsg = 'An unexpected error occured. Please try again later'
+      this.alertMsg = 'Invalid credentials'
       this.alertColor = 'red'
 
       console.log(error);
