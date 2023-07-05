@@ -18,6 +18,7 @@ import { ClipComponent } from './clip/clip.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { EditComponent } from './video/edit/edit.component';
+import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { EditComponent } from './video/edit/edit.component';
     // UploadComponent,
     ClipComponent,
     NotFoundComponent,
+    //EventBlockerDirective,
     //EditComponent,
   ],
   imports: [

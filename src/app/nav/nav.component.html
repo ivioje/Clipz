@@ -2,7 +2,7 @@
 <header id="header" class="bg-secondary">
     <nav class="container mx-auto flex justify-start items-center py-8 px-4">
         <!-- App Name -->
-        <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" [routerLink]="['/']">Clipz</a>
+        <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="/">Clipz</a>
 
         <div class="flex flex-grow items-center">
             <!-- Primary Navigation -->
@@ -13,12 +13,12 @@
                         Login / Register</a>
                 </li>
                 <ng-template #authLinks>
-                    <li [routerLink]="['/manage']" routerLinkActive="text-indigo-400">
-                        <a class="px-2" [routerLink]="['/manage']" routerLinkActiveOptions="{ exact: true }"
+                    <li routerLink="/manage" routerLinkActive="text-indigo-400">
+                        <a class="px-2" routerLink="manage" routerLinkActiveOptions="{ exact: true }"
                             [queryParams]="{ sort: '1' }" queryParamsHandling="merge">
                             Manage</a>
                     </li>
-                    <li [routerLink]="['/upload']" routerLinkActive="text-indigo-400">
+                    <li routerLink="/upload" routerLinkActive="text-indigo-400">
                         <a class="px-2" routerLink="/upload" routerLinkActiveOptions="{ exact: true }">Upload</a>
                     </li>
                     <li>
@@ -28,7 +28,7 @@
                     </li>
                 </ng-template>
                 <li routerLinkActive="text-indigo-400">
-                    <a class="px-2" [routerLink]="['/about']" routerLinkActive="text-indigo-400">About</a>
+                    <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400">About</a>
                 </li>
             </ul>
             <!-- Language Switcher -->
