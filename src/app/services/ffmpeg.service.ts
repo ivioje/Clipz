@@ -5,6 +5,7 @@ import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
   providedIn: 'root'
 })
 export class FfmpegService {
+  isRunning = false
   isReady = false
   private ffmpeg
 
@@ -23,22 +24,60 @@ export class FfmpegService {
   }
 
   async getScreenshots(file: File) {
+    this.isRunning = true
     const data = await fetchFile(file)
 
     this.ffmpeg.FS('writeFile', file.name, data)
 
+    const seconds = [1, 2, 3]
+    const commands: string[] = []
+
+    seconds.forEach(second => {
+      commands.push(
+        // Input
+        '-i', file.name,
+
+        //output options
+        '-ss', `00:00:0${second}`,
+        '-frames:v', '1',
+        '-filter:v', 'scale=510:-1',
+
+        //output
+        `output_0${second}.png`
+      )
+    })
+
+
     await this.ffmpeg.run(
-      // Input
-      '-i', file.name,
-
-      //output options
-      '-ss', '00:00:01',
-      '-frames:v', '1',
-      '-filter:v', 'scale=510:-1',
-
-      //output
-      'output_01.png'
+      ...commands
 
     )
+
+    const screenshots: string[] = []
+
+    seconds.forEach(second => {
+      const screenshotsFile = this.ffmpeg.FS('readFile', `output_0${second}.png`
+      )
+
+      const screenshotBlob = new Blob(
+        [screenshotsFile.buffer], {
+        type: 'image/png'
+      }
+      )
+
+      const screenshotURL = URL.createObjectURL(screenshotBlob)
+
+      screenshots.push(screenshotURL)
+    })
+
+    this.isRunning = false
+    return screenshots
+  }
+
+  async blobFromURL(url: string) {
+    const response = await fetch(url)
+    const blob = await response.blob()
+
+    return blob
   }
 }
