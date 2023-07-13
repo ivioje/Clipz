@@ -19,6 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { EditComponent } from './video/edit/edit.component';
 import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
+import { ClipsListComponent } from './clips-list/clips-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EventBlockerDirective } from './shared/directives/event-blocker.directi
     // UploadComponent,
     ClipComponent,
     NotFoundComponent,
+    ClipsListComponent,
     //EventBlockerDirective,
     //EditComponent,
   ],
