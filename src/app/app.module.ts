@@ -20,6 +20,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { EditComponent } from './video/edit/edit.component';
 import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
 import { ClipsListComponent } from './clips-list/clips-list.component';
+import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ClipsListComponent } from './clips-list/clips-list.component';
     ClipComponent,
     NotFoundComponent,
     ClipsListComponent,
+    FbTimestampPipe,
     //EventBlockerDirective,
     //EditComponent,
   ],
