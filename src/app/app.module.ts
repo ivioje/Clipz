@@ -11,13 +11,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ManageComponent } from './manage/manage.component';
-import { UploadComponent } from './upload/upload.component';
 import { ClipComponent } from './clip/clip.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { EditComponent } from './video/edit/edit.component';
-import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
 import { ClipsListComponent } from './clips-list/clips-list.component';
 import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
 
@@ -27,14 +23,10 @@ import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
     NavComponent,
     HomeComponent,
     AboutComponent,
-    //ManageComponent,
-    // UploadComponent,
     ClipComponent,
     NotFoundComponent,
     ClipsListComponent,
     FbTimestampPipe,
-    //EventBlockerDirective,
-    //EditComponent,
   ],
   imports: [
     BrowserModule,
